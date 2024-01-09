@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:39:04 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:58 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/09 11:27:04 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/09 17:24:55 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == ((char)c))
+			return ((char *)&s[i]);
+		i++;
+	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
 // #include <stdio.h>
-// int main (void)
+// int main(void)
 // {
-// 	int c = 70;
-// 	printf("%d\n", ft_isalpha(c));
-// 	return (0);
+// 	const char *s = "esta funcion esta mas fea que mi cara";
+// 	printf("%s", ft_strchr(s, 5));
+// 	return(0);
 // }

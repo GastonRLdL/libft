@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:48:19 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:58 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/09 19:19:00 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/09 19:29:43 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (c < 48 || (c > 57 && c < 65)
-		|| (c > 90 && c < 97) || c > 122)
+	size_t	i;
+	char	*str;
+
+	i = 0;
+	str = (char *)src;
+	if (!dst && !src)
 		return (0);
-	return (1);
+	while (i < n)
+	{
+		((char *)dst)[i] = str[i];
+		i++;
+	}
+	return (dst);
 }
 
-// #include <stdio.h>
-// int main (void)
+// int main()
 // {
-// 	int c = 5;
-// 	printf("%d\n", ft_isalnum(c));
-// 	return (0);
+//     char source[] = "Hello, World!";
+//     char destination[20];
+
+//     printf("Copied string: %s\n", ft_memcpy(destination, source, sizeof(source)));
+//     return 0;
 // }

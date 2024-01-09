@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:39:04 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:58 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/09 11:13:48 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/09 17:39:16 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-// #include <stdio.h>
-// int main (void)
+// int main(void)
 // {
-// 	int c = 70;
-// 	printf("%d\n", ft_isalpha(c));
-// 	return (0);
+// 	const char *s = "";
+// 	printf("el largo es:%d", ft_strlen(s));
+// 	return(0);
 // }

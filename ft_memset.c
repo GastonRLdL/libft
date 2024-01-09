@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:39:04 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:58 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/09 18:34:50 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/09 18:43:56 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	size_t			i;
+	unsigned char	*s;
+
+	i = 0;
+	s = (unsigned char *)b;
+	while (i < len)
+	{
+		s[i] = c;
+		i++;
+	}
+	return (b);
 }
 
-// #include <stdio.h>
-// int main (void)
+// int main()
 // {
-// 	int c = 70;
-// 	printf("%d\n", ft_isalpha(c));
-// 	return (0);
+//     char buffer[10];
+//     printf("Buffer after memset: %s\n", ft_memset(buffer, 'A', sizeof(buffer)));
+//     return 0;
 // }

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:39:04 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:58 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/09 11:18:21 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/09 17:24:50 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_toupper(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	if (c >= 97 & c <= 122)
+		return (c - 32);
+	return (c);
 }
 
 // #include <stdio.h>
 // int main (void)
 // {
-// 	int c = 70;
-// 	printf("%d\n", ft_isalpha(c));
+// 	int c = 30;
+// 	printf("%d\n", ft_toupper(c));
 // 	return (0);
 // }
