@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 18:34:50 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/10 16:26:32 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/11 19:21:18 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/11 20:13:18 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			i;
-	unsigned char	*s;
+	size_t	i;
 
-	i = 0;
-	s = (unsigned char *)b;
-	while (i < len)
-	{
-		s[i] = c;
-		i++;
-	}
-	return (b);
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
 
 // int main()
 // {
-//     char buffer[10];
-//     printf("Buffer after memset: %s\n", ft_memset(buffer, 'A', sizeof(buffer)));
-//     return 0;
+// 	char const s1[] = "mireholamire";
+// 	char const *set = "mire";
+// 	printf("%s\n", ft_strtrim(s1, set));
+// 	return (0);
 // }

@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 18:34:50 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/10 16:26:32 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/11 15:22:29 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	size_t			i;
-	unsigned char	*s;
+	size_t	i;
+	char	*ptr;
 
 	i = 0;
-	s = (unsigned char *)b;
-	while (i < len)
+	ptr = malloc(ft_strlen(s1));
+	if (!ptr)
+		return (NULL);
+	while (s1[i])
 	{
-		s[i] = c;
+		ptr[i] = s1[i];
 		i++;
 	}
-	return (b);
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 // int main()
 // {
-//     char buffer[10];
-//     printf("Buffer after memset: %s\n", ft_memset(buffer, 'A', sizeof(buffer)));
-//     return 0;
+// 	const char *s1 = "mira mira, esto es un puntero constante char";
+// 	printf("%s\n", ft_strdup(s1));
+// 	return (0);
 // }

@@ -6,7 +6,7 @@
 #    By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:35:28 by gasroman          #+#    #+#              #
-#    Updated: 2024/01/09 19:30:44 by gasroman         ###   ########.fr        #
+#    Updated: 2024/01/11 20:11:32 by gasroman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,9 @@ PROGRESS_BAR :=
 SRCS	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_strlen.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
 			ft_strncmp.c ft_strlcpy.c ft_atoi.c ft_strlcat.c ft_memset.c \
-			ft_memcpy.c
+			ft_memcpy.c ft_bzero.c ft_strdup.c ft_substr.c ft_strjoin.c \
+			ft_strtrim.c
 			
-
-
 BONUS 	= 	
 
 # =========================== DIRECTORIES ==================================== #

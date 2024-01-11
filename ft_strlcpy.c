@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:23:30 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:54 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:55:27 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,23 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
+	size_t			len;
 	unsigned int	i;
 
-	i = 0;
 	if (dstsize == 0)
-		return (ft_strlen(src));
-	while (src[i] && dst[i] && i < dstsize - 1)
+	{
+		len = ft_strlen(src);
+		return (len);
+	}
+	i = 0;
+	while (src[i] && i < dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (ft_strlen(src));
+	len = ft_strlen(src);
+	return (len);
 }
 
 // #include <string.h>
