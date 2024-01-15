@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:04:43 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/14 05:49:37 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/14 05:50:18 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	char	*ptr;
+	void	*temp;
+	t_list	*new;
+	t_list	*elem;
 
-	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
+	if (!lst)
 		return (0);
-	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
-	return (ptr);
+	new = NULL;
+	while (lst)
+	{
+		temp = f(lst->content);
+		elem = ft_lstnew(temp);
+		if (!elem)
+		{
+			del(temp);
+			ft_lstclear(&new, del);
+		}
+		ft_lstadd_back(&new, elem);
+		lst = lst->next;
+	}
+	return (new);
 }
-
-// int main()
-// {
-// 	const char *s1 = "You've played the victim for so long now in this game";
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
-// }

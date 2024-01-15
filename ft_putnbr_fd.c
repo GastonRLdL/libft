@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:04:43 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/14 04:12:29 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/14 04:16:49 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
-		return (0);
-	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
-	return (ptr);
+	if (nb == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
+	{
+		if (nb < 0)
+		{
+			ft_putchar_fd('-', fd);
+			nb *= -1;
+		}
+		if (nb > 9)
+			ft_putnbr_fd((nb / 10), fd);
+		ft_putchar_fd((nb % 10) + 48, fd);
+	}
 }
 
-// int main()
+// int main(void)
 // {
-// 	const char *s1 = "You've played the victim for so long now in this game";
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
+//	int fd = 1;
+//	int nb = -35435855;
+
+//	ft_putnbr_fd(nb, fd);
+//	return (0);
 // }

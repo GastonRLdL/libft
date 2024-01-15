@@ -6,7 +6,7 @@
 #    By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:35:28 by gasroman          #+#    #+#              #
-#    Updated: 2024/01/11 20:11:32 by gasroman         ###   ########.fr        #
+#    Updated: 2024/01/15 17:47:06 by gasroman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,23 +22,64 @@ PROGRESS_BAR :=
 
 # =========================== SOURCES ======================================== #
 
-SRCS	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-			ft_strlen.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
-			ft_strncmp.c ft_strlcpy.c ft_atoi.c ft_strlcat.c ft_memset.c \
-			ft_memcpy.c ft_bzero.c ft_strdup.c ft_substr.c ft_strjoin.c \
-			ft_strtrim.c
+SRCS_FILES	=	ft_atoi \
+				ft_bzero \
+				ft_calloc \
+				ft_isalnum \
+				ft_isalpha \
+				ft_isascii \
+				ft_isdigit \
+				ft_isprint \
+				ft_itoa \
+				ft_memchr \
+				ft_memcmp \
+				ft_memcpy \
+				ft_memmove \
+				ft_memset \
+				ft_putchar_fd \
+				ft_putendl_fd \
+				ft_putnbr_fd \
+				ft_putstr_fd \
+				ft_split \
+				ft_strchr \
+				ft_strdup \
+				ft_striteri \
+				ft_strjoin \
+				ft_strlcat \
+				ft_strlcpy \
+				ft_strlen \
+				ft_strmapi \
+				ft_strncmp \
+				ft_strnstr \
+				ft_strrchr \
+				ft_strtrim \
+				ft_substr \
+				ft_tolower \
+				ft_toupper \
 			
-BONUS 	= 	
+BONUS_FILES =	ft_lstadd_back \
+				ft_lstadd_front \
+				ft_lstclear \
+				ft_lstdelone \
+				ft_lstiter \
+				ft_lstlast \
+				ft_lstmap \
+				ft_lstnew \
+				ft_lstsize \
 
 # =========================== DIRECTORIES ==================================== #
+
+#.c
+SRCS = $(addsuffix .c, $(SRCS_FILES))
+BONUS = $(addsuffix .c, $(BONUS_FILES))
 
 D_OBJ = obj
 #.o
 OBJ = $(addprefix $(D_OBJ)/, $(SRCS:.c=.o))
-DEP = $(addprefix $(D_OBJ)/, $(SRCS:.c=.d))
+# DEP = $(addprefix $(D_OBJ)/, $(SRCS:.c=.d))
 #Bonus .o
 B_OBJ = $(addprefix $(D_OBJ)/, $(BONUS:.c=.o))
-B_DEP = $(addprefix $(D_OBJ)/, $(BONUS:.c=.d))
+# B_DEP = $(addprefix $(D_OBJ)/, $(BONUS:.c=.d))
 
 # =========================== BOLD COLORS ==================================== #
 

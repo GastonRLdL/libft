@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:55:51 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/11 19:11:34 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:34:53 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 // int main()
 // {
-//     char *s1 = "Hello, ";
-//     char *s2 = "world!";
-//     char *result = ft_strjoin(s1, s2);
-//     if (result)
-//         printf("Result: %s\n", result);
-//     else
-//         printf("Memory allocation failed.\n");
-//     return 0;
+// 	char *s1 = "I've met our makers, ";
+// 	char *s2 = "they don't even know your name!";
+// 	char *result = ft_strjoin(s1, s2);
+// 	if (result)
+// 		printf("%s\n", result);
+// 	else
+// 		printf("Memory allocation failed.\n");
+// 	return 0;
 // }

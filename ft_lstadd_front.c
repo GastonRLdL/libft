@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:04:43 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/14 04:55:44 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/14 05:50:42 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
-		return (0);
-	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
-	return (ptr);
+	new->next = *lst;
+	*lst = new;
 }
-
-// int main()
-// {
-// 	const char *s1 = "You've played the victim for so long now in this game";
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
-// }

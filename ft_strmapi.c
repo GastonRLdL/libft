@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:04:43 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/14 02:26:03 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/15 18:21:46 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	char	*ptr;
+	int		i;
+	char	*str;
 
-	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
+	if (!s || !f)
 		return (0);
-	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
-	return (ptr);
+	i = 0;
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (0);
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
 // int main()
 // {
-// 	const char *s1 = "You've played the victim for so long now in this game";
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
+//	char *s = "ejemplo";
+//	char *result = ft_strmapi(s, f);
+
+//	printf("Resultado: %s\n", result);
+//	free(result);
+//	return 0;
 // }

@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:34:50 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/10 16:26:32 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:21:53 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 // int main()
 // {
-//     char buffer[10];
-//     printf("Buffer after memset: %s\n", ft_memset(buffer, 'A', sizeof(buffer)));
-//     return 0;
+// 	char buffer[10];
+// 	printf("Buffer after memset: %s\n", ft_memset(buffer, 'A', sizeof(buffer)));
+// 	return 0;
 // }

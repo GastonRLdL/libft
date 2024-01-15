@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 20:41:00 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/10 16:55:42 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:19:51 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	ft_bzero(void *s, size_t n)
 
 // int main()
 // {
-//     char buffer[10];
-//     ft_bzero(buffer, sizeof(buffer));
-//     printf("Buffer after bzero: %s\n", buffer);
-//     return 0;
+// 	char buffer[10];
+// 	ft_bzero(buffer, sizeof(buffer));
+// 	printf("Buffer after bzero: %s\n", buffer);
+// 	return 0;
 // }

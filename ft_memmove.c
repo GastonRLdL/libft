@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:04:16 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/11 20:12:53 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:42:47 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
-	if (!dst && !src)
-		return (dst);
 	i = 0;
-	if (dst > src)
+	if (!dst && !src)
+		return (0);
+	if ((size_t)dst - (size_t)src < len)
 	{
 		i = len - 1;
-		while (i >= 0)
+		while (i < len)
 		{
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i--;
@@ -31,7 +31,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		i = 0;
 		while (i < len)
 		{
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
@@ -43,9 +42,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 // int main()
 // {
-//     char src[] = "Marta tas bien?";
-//     char dst[2];
-//     memmove(dst, src, sizeof(src));
-//     printf("Moved string: %s\n", dst);
-//     return 0;
+// 	char src[] = "And we dont need anything from you";
+// 	char dst[2];
+// 	memmove(dst, src, sizeof(src));
+// 	printf("Moved string: %s\n", dst);
+// 	return 0;
 // }

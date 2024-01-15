@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 22:41:58 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 22:49:30 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:53:51 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 // int main()
 // {
-//     const char *haystack = "Hello, World!";
-//     const char *needle = "World";
+// 	const char *haystack = "Hello, World!";
+// 	const char *needle = "Hl or";
 
-//     char *result = ft_strnstr(haystack, needle, 13);
+// 	char *result = ft_strnstr(haystack, needle, 13);
 
-//     if (result != NULL)
-//         printf("Needle found at index: %ld\n", result - haystack);
-//     else
-//         printf("Needle not found.\n");
-//     return 0;
+// 	if (result != NULL)
+// 		printf("Needle found at index: %ld\n", result - haystack);
+// 	else
+// 		printf("Needle not found.\n");
+// 	return 0;
 // }

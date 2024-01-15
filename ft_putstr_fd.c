@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:04:43 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/14 04:01:48 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/14 04:28:08 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-	char	*ptr;
+	int	i;
 
 	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
-		return (0);
-	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
-	return (ptr);
+	while (s[i])
+		write(fd, &s[i++], 1);
 }
 
-// int main()
+// int main(void)
 // {
-// 	const char *s1 = "You've played the victim for so long now in this game";
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
+//	int fd = 1;
+//	char *s = "So, what am I fighting for? Everything back and more";
+
+//	ft_putstr_fd(s, fd);
+//	return (0);
 // }

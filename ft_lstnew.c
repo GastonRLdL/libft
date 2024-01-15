@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 20:50:40 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:04:43 by gasroman         ###   ########.fr       */
+/*   Created: 2024/01/14 04:19:36 by gasroman          #+#    #+#             */
+/*   Updated: 2024/01/14 05:50:45 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	char	*ptr;
+	t_list	*add_node;
 
-	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
-		return (0);
-	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
-	return (ptr);
+	add_node = (t_list *)malloc(sizeof(t_list));
+	if (!add_node)
+		return (NULL);
+	add_node->content = content;
+	add_node->next = NULL;
+	return (add_node);
 }
 
-// int main()
+// int main(void)
 // {
-// 	const char *s1 = "You've played the victim for so long now in this game";
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
+// 	t_list *newNode = ft_lstnew("Cause I'm not giving up. No self-control");
+
+// 	printf("Contenido del nodo: %s\n", (char *)newNode->content);
+// 	free(newNode);
+// 	return 0;
 // }

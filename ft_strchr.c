@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:27:04 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:55 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/14 04:28:04 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strchr(const char *s, int c)
 // #include <stdio.h>
 // int main(void)
 // {
-// 	const char *s = "esta funcion esta mas fea que mi cara";
+// 	const char *s = "I feel like I don't give a shit";
 // 	printf("%s", ft_strchr(s, 5));
 // 	return(0);
 // }

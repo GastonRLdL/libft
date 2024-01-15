@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:13:48 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:39:16 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:36:41 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *s)
 
 // int main(void)
 // {
-// 	const char *s = "";
+// 	const char *s = "Think before you make up your mind";
 // 	printf("el largo es:%d", ft_strlen(s));
 // 	return(0);
 // }

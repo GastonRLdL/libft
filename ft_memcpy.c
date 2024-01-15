@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:19:00 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/10 16:29:25 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:04:42 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	char	*str;
 
 	i = 0;
-	str = (char *)src;
 	if (!dst && !src)
 		return (0);
 	while (i < n)
 	{
-		((char *)dst)[i] = str[i];
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dst);
@@ -31,9 +29,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 // int main()
 // {
-//     char source[] = "Hello, World!";
-//     char destination[20];
+// 	char source[] = "Hello, World!";
+// 	char destination[20];
 
-//     printf("Copied string: %s\n", ft_memcpy(destination, source, sizeof(source)));
-//     return 0;
+// 	printf("String: %s\n", ft_memcpy(destination, source, sizeof(source)));
+// 	return 0;
 // }

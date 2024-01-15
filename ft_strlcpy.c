@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:23:30 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/11 18:55:27 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:35:51 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // #include <string.h>
 // int main(void)
 // {
-// 	const char s2[] = "hola pedro";
+// 	const char s2[] = "The king of all that's said and done";
 // 	char s1[] = "";
 // 	printf("el largo es: %zu\n", strlcpy("", "", 1));
 // 	printf("el largo es: %zu\n", ft_strlcpy("", "", 1));

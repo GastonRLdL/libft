@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:36:59 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/11 20:12:16 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/01/14 04:28:01 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	char *s = "it sucks when im feeling lonely";
 // 	unsigned int start = 17;
 // 	size_t len = 14;
+
 // 	char *str = ft_substr(s, start, len);
 // 	printf("dont ever let me start %s\n", str);
 // 	free(str);
