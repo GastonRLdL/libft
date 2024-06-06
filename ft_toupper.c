@@ -6,13 +6,13 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:18:21 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/09 17:24:50 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:24:03 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 & c <= 122)
+	if (c >= 97 && c <= 122)
 		return (c - 32);
 	return (c);
 }
