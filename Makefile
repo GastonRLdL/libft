@@ -6,66 +6,71 @@
 #    By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:35:28 by gasroman          #+#    #+#              #
-#    Updated: 2024/01/15 17:47:06 by gasroman         ###   ########.fr        #
+#    Updated: 2024/06/12 12:34:58 by gasroman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # =============================== VARIABLES ================================== #
 
 NAME	=	libft.a
-CC		=	gcc
+CC		=	cc
 RM		=	rm -rf
 FLAGS	=	-Wall -Wextra -Werror
 LIBC	=	ar -rcs
-CURRENT_FILE = 0
-PROGRESS_BAR :=
 
 # =========================== SOURCES ======================================== #
 
-SRCS_FILES	=	ft_atoi \
-				ft_bzero \
-				ft_calloc \
-				ft_isalnum \
-				ft_isalpha \
-				ft_isascii \
-				ft_isdigit \
-				ft_isprint \
-				ft_itoa \
-				ft_memchr \
-				ft_memcmp \
-				ft_memcpy \
-				ft_memmove \
-				ft_memset \
-				ft_putchar_fd \
-				ft_putendl_fd \
-				ft_putnbr_fd \
-				ft_putstr_fd \
-				ft_split \
-				ft_strchr \
-				ft_strdup \
-				ft_striteri \
-				ft_strjoin \
-				ft_strlcat \
-				ft_strlcpy \
-				ft_strlen \
-				ft_strmapi \
-				ft_strncmp \
-				ft_strnstr \
-				ft_strrchr \
-				ft_strtrim \
-				ft_substr \
-				ft_tolower \
-				ft_toupper \
-			
-BONUS_FILES =	ft_lstadd_back \
-				ft_lstadd_front \
-				ft_lstclear \
-				ft_lstdelone \
-				ft_lstiter \
-				ft_lstlast \
-				ft_lstmap \
-				ft_lstnew \
-				ft_lstsize \
+SRCS_FILES	=	ft_atoi			\
+				ft_bzero		\
+				ft_calloc		\
+				ft_isalnum		\
+				ft_isalpha		\
+				ft_isascii		\
+				ft_isdigit		\
+				ft_isprint		\
+				ft_itoa			\
+				ft_memchr		\
+				ft_memcmp		\
+				ft_memcpy		\
+				ft_memmove		\
+				ft_memset		\
+				ft_putchar_fd	\
+				ft_putendl_fd	\
+				ft_putnbr_fd	\
+				ft_putstr_fd	\
+				ft_split		\
+				ft_strchr		\
+				ft_strdup		\
+				ft_striteri		\
+				ft_strjoin		\
+				ft_strlcat		\
+				ft_strlcpy		\
+				ft_strlen		\
+				ft_strmapi		\
+				ft_strncmp		\
+				ft_strnstr		\
+				ft_strrchr		\
+				ft_strtrim		\
+				ft_substr		\
+				ft_tolower		\
+				ft_toupper		\
+				ft_printf		\
+				ft_for_cs		\
+				ft_for_diupx	\
+				fd_printf		\
+				fd_for_cs		\
+				fd_for_diupx	\
+				fd_for_xX
+
+BONUS_FILES	=	ft_lstadd_back	\
+				ft_lstadd_front	\
+				ft_lstclear		\
+				ft_lstdelone	\
+				ft_lstiter		\
+				ft_lstlast		\
+				ft_lstmap		\
+				ft_lstnew		\
+				ft_lstsize		\
 
 # =========================== DIRECTORIES ==================================== #
 
@@ -76,7 +81,7 @@ BONUS = $(addsuffix .c, $(BONUS_FILES))
 D_OBJ = obj
 #.o
 OBJ = $(addprefix $(D_OBJ)/, $(SRCS:.c=.o))
-# DEP = $(addprefix $(D_OBJ)/, $(SRCS:.c=.d))
+DEP = $(addprefix $(D_OBJ)/, $(SRCS:.c=.d))
 #Bonus .o
 B_OBJ = $(addprefix $(D_OBJ)/, $(BONUS:.c=.o))
 # B_DEP = $(addprefix $(D_OBJ)/, $(BONUS:.c=.d))
@@ -103,21 +108,15 @@ all:	dir $(NAME)
 dir: 
 	-mkdir $(D_OBJ)
 
-#Compilation with loading bar
 $(D_OBJ)/%.o: %.c
 	$(CC) -MMD $(FLAGS) -c $< -o $@
-	$(eval CURRENT_FILE := $(shell echo $$(($(CURRENT_FILE) + 1)))) \
-	$(eval PROGRESS_BAR := $(shell awk "BEGIN { printf \"%.0f\", $(CURRENT_FILE)*100/$(TOTAL_FILES) }")) \
-	printf "\r$B$(ligth)⏳Compiling libft:$E $(ligth)%-30s [$(CURRENT_FILE)/$(TOTAL_FILES)] [%-50s] %3d%%\033[K" \
-	"$<..." "$(shell printf '$(G)█%.0s$(E)$(ligth)' {1..$(shell echo "$(PROGRESS_BAR)/2" | bc)})" $(PROGRESS_BAR)
-	
-	@if [ $(PROGRESS_BAR) = 100 ]; then \
-		echo "$(B) All done$(E)"; \
-	fi
+	@printf "\r$(G)$<$(E) to $(P)$@$(E)                                       "
+
 $(NAME):	${OBJ}
 	$(LIBC) $(NAME) $(OBJ)
 	touch $(NAME)
-	echo "\n\n✅ ==== $(B)$(ligth)Project libft compiled!$(E) ==== ✅"
+	@echo "\n$(G)$(NAME) succesfully compiled...$(E)"
+	
 bonus:	dir ${B_OBJ} $(NAME)
 	if [ -f bonus ]; then\
 		echo "$(B)$(ligth)make:$(E)$(ligth) 'bonus' is up to date.$(E)";\
