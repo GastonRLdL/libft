@@ -6,7 +6,7 @@
 #    By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:35:28 by gasroman          #+#    #+#              #
-#    Updated: 2024/06/12 12:34:58 by gasroman         ###   ########.fr        #
+#    Updated: 2024/06/16 06:18:42 by gasroman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,9 @@ SRCS_FILES	=	ft_atoi			\
 				fd_printf		\
 				fd_for_cs		\
 				fd_for_diupx	\
-				fd_for_xX
+				fd_for_xX		\
+				get_next_line	\
+				get_next_line_utils
 
 BONUS_FILES	=	ft_lstadd_back	\
 				ft_lstadd_front	\

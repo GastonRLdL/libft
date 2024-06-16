@@ -6,15 +6,21 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:34:49 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/15 17:43:00 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/06/16 06:16:44 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
+# include <fcntl.h>
 
 /* ========================== FUNCTIONS ===================================== */
 
@@ -52,6 +58,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*get_next_line(int fd);
+char	*double_free(char **buff, char **buff_);
 
 /* ========================== STRUCT ======================================== */
 
