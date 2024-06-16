@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:34:49 by gasroman          #+#    #+#             */
-/*   Updated: 2024/06/16 06:16:44 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/06/16 06:31:40 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*get_next_line(int fd);
 char	*double_free(char **buff, char **buff_);
+char	**error_free(char **str, int count);
+char	**clear_split(char **str);
 
 /* ========================== STRUCT ======================================== */
 
