@@ -6,7 +6,7 @@
 /*   By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 10:57:16 by gasroman          #+#    #+#             */
-/*   Updated: 2024/01/13 18:18:05 by gasroman         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:23:31 by gasroman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,24 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
-static char	**error_free(char **str, int count)
+char	**error_free(char **str, int count)
 {
 	while (count >= 0)
 	{
 		free(str[count]);
 		count--;
 	}
+	free(str);
+	return (NULL);
+}
+
+char	**clear_split(char **str)
+{
+	int	count;
+
+	count = -1;
+	while (str[++count])
+		free(str[count]);
 	free(str);
 	return (NULL);
 }

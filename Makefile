@@ -6,7 +6,7 @@
 #    By: gasroman <gasroman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:35:28 by gasroman          #+#    #+#              #
-#    Updated: 2024/06/16 06:18:42 by gasroman         ###   ########.fr        #
+#    Updated: 2024/07/10 17:26:17 by gasroman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,8 +62,8 @@ SRCS_FILES	=	ft_atoi			\
 				fd_for_diupx	\
 				fd_for_xX		\
 				get_next_line	\
-				get_next_line_utils
-
+				get_next_line_utils	\
+				
 BONUS_FILES	=	ft_lstadd_back	\
 				ft_lstadd_front	\
 				ft_lstclear		\
@@ -108,7 +108,7 @@ all:	dir $(NAME)
 -include $(B_DEP)
 
 dir: 
-	-mkdir $(D_OBJ)
+	@mkdir -p $(D_OBJ)
 
 $(D_OBJ)/%.o: %.c
 	$(CC) -MMD $(FLAGS) -c $< -o $@
